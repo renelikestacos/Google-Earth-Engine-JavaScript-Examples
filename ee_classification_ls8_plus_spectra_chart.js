@@ -2,8 +2,8 @@
 // Script: Classification Example for Landsat8 plus spectra for classes in classified region
 // Version: 0.1
 
-var fc = ee.FeatureCollection('ft:1ihcmnTQF2dUYTKXOIYYwYlJzFLSpO7zsIxg0Yqd5');
-var LS = ee.ImageCollection('LANDSAT/LC8_L1T').filterDate('2016-01-01', '2016-04-19').min().clip(fc);
+var area = ee.FeatureCollection('ft:1ihcmnTQF2dUYTKXOIYYwYlJzFLSpO7zsIxg0Yqd5');
+var landsat8_collection = ee.ImageCollection('LANDSAT/LC8_L1T').filterDate('2016-01-01', '2016-04-19').min().clip(area);
 var madmex = ee.Image("users/renekope/MEX_LC_2010_Landsat_v43")
 
 //Functions
@@ -86,10 +86,10 @@ function calculate_spectral_indices(input){
 function classification(raster_input, vector_input, number_of_training_points, cover, class_algorithm){
   var band_list = raster_input.bandNames();
   for (var i = 0; i < number_of_training_points.length; i++) {
-    var points = ee.FeatureCollection.randomPoints(vector_input, number_of_training_points[i], number_of_training_points[i], 1);
+    var random_points = ee.FeatureCollection.randomPoints(vector_input, number_of_training_points[i], number_of_training_points[i], 1);
     var training = cover.addBands(raster_input).reduceToVectors({
       reducer: "mean",
-      geometry: points,
+      geometry: random_points,
       geometryType: "centroid",
       scale: 30, 
       crs: "EPSG:4326"});
@@ -145,9 +145,9 @@ var sld = '<RasterSymbolizer>\
                         </ColorMap>\
                     </RasterSymbolizer>';
 
-var spectral_indices = calculate_spectral_indices(LS);
-var output1 = classification(spectral_indices, fc, [1000], madmex, 'Cart');
-addToMap(output1.sldStyle(sld), {}, "Classification MAD-Mex LS Training")
+var spectral_indices = calculate_spectral_indices(landsat8_collection);
+var classification = classification(spectral_indices, area, [1000], madmex, 'Cart');
+addToMap(classification.sldStyle(sld), {}, "Classification with Landsat 8 and MAD-Mex 2010 training dataset")
 
 function calculate_spectra_chart_classficiation(classifiedImage, inputImage, fusionTable){
   var classNames = ee.List(['Agua', 'Bosque', 'Matorral', 'Agricultura', 'Urbana', 'Selva', 'Otro Vegetation', 'Otro']);
@@ -176,4 +176,4 @@ function calculate_spectra_chart_classficiation(classifiedImage, inputImage, fus
       .setOptions(options);
   print(chart);
 };
-calculate_spectra_chart_classficiation(output1, LS, fc);
+calculate_spectra_chart_classficiation(classification, landsat8_collection, area);
