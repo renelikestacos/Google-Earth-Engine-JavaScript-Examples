@@ -1,10 +1,13 @@
 // Author: René Kopeinig
 // Script: Tasseled Cap Transformation for Landsat 8
-// Description: The bands of the output image are the brightness index, greenness index and wetness index
+// Description: Tasseled Cap Transformation for Landsat 8 based on the 
+//              scientfic work "Derivation of a tasselled cap transformation based on Landsat 8 at-satellite reflectance" by
+//              M.Baigab, L.Zhang, T.Shuai & Q.Tong (2014). The bands of the output image are the brightness index, 
+//              greenness index and wetness index.
 // Version: 0.1
 var calculateTasseledCap = function (image){
   var b = image.select("B2", "B3", "B4", "B5", "B6", "B7");
-  //Coefficients are only for Landsat 8
+  //Coefficients are only for Landsat 8 TOA
 	var brightness_coefficents= ee.Image([0.3029, 0.2786, 0.4733, 0.5599, 0.508, 0.1872])
   var greenness_coefficents= ee.Image([-0.2941, -0.243, -0.5424, 0.7276, 0.0713, -0.1608]);
   var wetness_coefficents= ee.Image([0.1511, 0.1973, 0.3283, 0.3407, -0.7117, -0.4559]);
