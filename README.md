@@ -21,3 +21,9 @@ High forest potential map for the Mexican state of Chiapas according to 'The Nat
 <br><br>
 #### 007 RapidEye Tasseled Cap Transformation:
 Tasseled Cap Transformation for RapidEye Imagery based on the scientfic work [Derivation of Tasseled Cap Coefficients for RapidEye data](https://www.researchgate.net/publication/270302804_Derivation_of_Tasseled_Cap_Coefficients_for_RapidEye_data) by M.Schoenert, H.Weichelt, E.Zillmann & C.Jürgens (2014). The bands of the output image are the brightness index, greenness index and yellowness index. Note: You might not be able to see the RapidEye scene because of license issues but feel free to use my code on your RapidEye scene(s).
+<br><br>
+#### 008 WEKA Learning Vector Quantization Clustering:
+Example which demonstrates clustering that implements WEKA Learning Vector Quantization algorithm for Landsat 8 based on T. Kohonen, "Learning Vector Quantization", The Handbook of Brain Theory and Neural Networks, 2nd Edition, MIT Press, 2003, pp. 631-634.
+<br><br>
+#### 009 Spectra analysis on Landsat 8 TOA & Proba-V S1 TOC
+Example of spectra analysis on Landsat 8 TOA & Proba-V S1 TOC on features such as agriculture, urban and water.
