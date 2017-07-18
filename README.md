@@ -17,7 +17,7 @@ Calculation of overall forest loss between 2010 and 2015 for the consecutive yea
 Calculation of loss in class 'Mixed Forest' based on the MODIS Land cover classification 2012 between 2012 and 2015 for the consecutive years.
 <br><br>
 #### 006 High potential forest map compared to MODIS Landcover Classification's forest classes:
-High forest potential map for the Mexican state of Chiapas according to 'The Nature Conservancy and Alianza México REDD+' compared with MODIS Land cover classification 2012's forest classes.
+High forest potential map for the Mexican state of Chiapas according to '[The Nature Conservancy](http://www.nature.org) and [Alianza México REDD+](http://www.alianza-mredd.org/)' compared with MODIS Land cover classification 2012's forest classes.
 <br><br>
 #### 007 RapidEye Tasseled Cap Transformation:
 Tasseled Cap Transformation for RapidEye Imagery based on the scientfic work [Derivation of Tasseled Cap Coefficients for RapidEye data](https://www.researchgate.net/publication/270302804_Derivation_of_Tasseled_Cap_Coefficients_for_RapidEye_data) by M.Schoenert, H.Weichelt, E.Zillmann & C.Jürgens (2014). The bands of the output image are the brightness index, greenness index and yellowness index. Note: You might not be able to see the RapidEye scene because of license issues but feel free to use my code on your RapidEye scene(s).
