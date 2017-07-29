@@ -2,6 +2,8 @@
 This is a collection of examples how to code with Google Earth Engine Javascript API. If you are already signed up in Google Earth Engine, just copy and paste my code in the [Google Earth Engine Sandbox](https://code.earthengine.google.com).
 <br><br>
 **Note:** If you are interested in more tutorials or code snippets for Google Earth Engine JavaScript API, feel free to write me an email to rene.kopeinig@list.lu.<br><br>
+
+## Sandbox Tutorials for Google Earth Engine
 #### 001 Landsat 8 Classification plus spectra chart
 Classification Example for Landsat 8 plus spectra for classes in classified region.
 <br><br>
